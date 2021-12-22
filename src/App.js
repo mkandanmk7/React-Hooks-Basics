@@ -5,6 +5,7 @@ import Component1 from "./Components/Component1";
 import Component2 from "./Components/Component2";
 import LastComponent from "./Components/LastComponent";
 import UseEffects from "./Components/UseEffects";
+import UseMemo from "./Components/UseMemo";
 import UseRefHooks from "./Components/UseRefHooks";
 
 export const UserContext = createContext();
@@ -14,6 +15,7 @@ function App() {
   return (
     <div className="App">
       <UserContext.Provider value={name}>
+        <UseMemo />
         <UseRefHooks />
         <Comp5 />
         <UseEffects />
