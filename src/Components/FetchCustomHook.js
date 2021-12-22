@@ -3,7 +3,7 @@ import CustomHooks from "./CustomHooks";
 
 const FetchCustomHook = () => {
   const [data, error] = CustomHooks(
-    "https://jsonplaceholder.typicode.com/tdos"
+    "https://jsonplaceholder.typicode.com/todos"
   ); //array of object named data[{}]
   console.log("todos Array", data);
   return (
