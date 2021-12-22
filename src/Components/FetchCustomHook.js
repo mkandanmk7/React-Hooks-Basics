@@ -3,20 +3,18 @@ import CustomHooks from "./CustomHooks";
 
 const FetchCustomHook = () => {
   const [data, error] = CustomHooks(
-    "https://jsonplaceholder.typicode.com/todos"
+    "https://jsonplaceholder.typicode.com/tdos"
   ); //array of object named data[{}]
   console.log("todos Array", data);
   return (
     <div>
-      <p style={{ color: "red" }}>Error is {error}</p>
-      {data.map((todo) => {
-        return <p>{todo.id}</p>;
-      })}
-      {/* {data && data.map((item)=> { 
-          return (<li key={item.id}>{item.id}</li>)
-        }
-
-    } */}
+      {error ? (
+        <p style={{ color: "red" }}>Error is {error}</p>
+      ) : (
+        data.map((todo) => {
+          return <p key={todo.id}>{todo.id}</p>;
+        })
+      )}
     </div>
   );
 };
