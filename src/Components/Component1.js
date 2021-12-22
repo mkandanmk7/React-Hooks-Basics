@@ -1,4 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
+import Fetch from "./Fetch";
+import FetchCustomHook from "./FetchCustomHook";
 
 const Component1 = () => {
   const [name, setName] = useState("Muthu");
@@ -10,7 +12,7 @@ const Component1 = () => {
   console.log(name);
   return (
     <div>
-      component 1
+      <h2>component 1</h2>
       <input
         type="text"
         value={name}
@@ -18,6 +20,9 @@ const Component1 = () => {
       />
       <p>Current Value is {name}</p>
       <p>Previous Value is {prevValue.current}</p>
+      <hr />
+      {/* <Fetch /> */}
+      <FetchCustomHook />
     </div>
   );
 };
