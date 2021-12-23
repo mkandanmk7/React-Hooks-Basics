@@ -25,6 +25,16 @@ const CounterReducer = (state, action) => {
         contacts: [...state.contacts, action.paylo], //added an new object value to existing array data;
       };
     }
+    case "delete Contact": {
+      const deleted = state.contacts.filter(
+        (contact) => contact.id !== action.payload.id
+      );
+      console.log(deleted);
+      return {
+        ...state,
+        contacts: deleted,
+      };
+    }
     default:
       return state;
   }
@@ -48,6 +58,7 @@ const UseReducerHooks = () => {
 
   const DeleteContact = (id) => {
     console.log("deleted contact is :", id);
+    dispatch({ type: "delete Contact", payload: { id: id } });
   };
   // counter example
   return (
@@ -83,7 +94,7 @@ const UseReducerHooks = () => {
             <ul>
               <li>{contact.name}</li>
               <li>{contact.email}</li>
-              <button onClick={DeleteContact(contact.id)}>
+              <button onClick={() => DeleteContact(contact.id)}>
                 Delete Contact
               </button>
             </ul>
