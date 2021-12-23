@@ -1,5 +1,6 @@
 import { createContext, useState } from "react";
 import "./App.css";
+import ApiCalls from "./Components/ApiCalls";
 import Comp5 from "./Components/Comp5";
 import Component1 from "./Components/Component1";
 import Component2 from "./Components/Component2";
@@ -16,9 +17,10 @@ function App() {
   return (
     <div className="App">
       <UserContext.Provider value={name}>
-        <UseMemo />
+        <ApiCalls />
+        {/* <UseMemo /> */}
         <hr />
-        <UseReducerHooks />
+        {/* <UseReducerHooks /> */}
         {/* <UseRefHooks />
         <Comp5 />
         <UseEffects />

@@ -78,8 +78,7 @@ const UseReducerHooks = () => {
           placeholder="Enter Name"
         />
         <input
-          type="email
-          "
+          type="email   "
           value={email}
           name="email"
           onChange={(e) => setEmail(e.target.value)}
