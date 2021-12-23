@@ -6,6 +6,7 @@ import Component2 from "./Components/Component2";
 import LastComponent from "./Components/LastComponent";
 import UseEffects from "./Components/UseEffects";
 import UseMemo from "./Components/UseMemo";
+import UseReducerHooks from "./Components/UseReducerHooks";
 import UseRefHooks from "./Components/UseRefHooks";
 
 export const UserContext = createContext();
@@ -16,12 +17,14 @@ function App() {
     <div className="App">
       <UserContext.Provider value={name}>
         <UseMemo />
-        <UseRefHooks />
+        <hr />
+        <UseReducerHooks />
+        {/* <UseRefHooks />
         <Comp5 />
         <UseEffects />
         <Component2 />
         <Component1 />
-        <LastComponent />
+        <LastComponent /> */}
       </UserContext.Provider>
     </div>
   );
